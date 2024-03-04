@@ -22,11 +22,8 @@
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <header>
-        <h1>Sirius do Norte</h1>
-    </header>
 
-
+    <?php include "./header.php"?>
 
 
 <main>
@@ -44,7 +41,7 @@
     */
     
     ?>
-    <a href="./ranking.php">Ranking</a>
+    
     <table>
         <thead>
             <tr>
@@ -108,7 +105,7 @@
         
     </table>
 </main>
-<a href="./logout.php">Sair</a>
+
 
 </body>
 </html>
