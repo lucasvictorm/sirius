@@ -1,0 +1,98 @@
+*{
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+header{
+    background-color: #001055;
+    padding: 1.3em 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+header img{
+    width: 100px;
+}
+
+header a{
+    text-decoration: none;
+    color: white;
+}
+
+header svg{
+    width: 20px;
+    color: white;
+    fill: white;
+}
+
+header .ranking{
+    display: flex;
+    position: absolute;
+    align-items: end;
+    gap: 5px;
+    left: 50px;
+}
+
+header .logout{
+    display: flex;
+    position: absolute;
+    align-items: end;
+    gap: 5px;
+    right: 50px;
+}
+
+main{
+    max-width: 700px;
+    width: 96%;
+    margin: auto;
+    margin-top: 1em;
+}
+
+h1{
+    font-size: 1.6em;
+}
+
+.info_envio{
+    margin-bottom: 2em;
+}
+
+img{
+    max-width: 300px;
+}
+
+.conteudo_envio .relatorio_div p:first-child{
+    font-weight: bold;
+}
+
+.conteudo_envio{
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
+}
+
+.actions{
+    display: flex;
+    justify-content: center;
+    gap: 1em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.actions form input[type='submit']{
+    padding: .8em 1.7em;
+    border-radius: 10px;
+    border: 0;
+    font-weight: bold;
+}
+
+.actions form:first-child input[type='submit']{
+    background-color: rgb(2, 176, 2);
+    color: white;
+}
+
+.actions form:last-child input[type='submit']{
+    background-color: rgb(176, 2, 2);
+    color: white;
+}
