@@ -67,16 +67,13 @@ form{
     gap: 1em;
 }
 
-form div{
-    display: flex;
-    flex-direction: column;
-}
 
+/*
 form div textarea{
     resize: none;
-}
-
-form input[type='submit']{
+}*/
+/*
+form button{
     width: 50%;
     background-color: #7446d9;
     color: white;
@@ -85,4 +82,10 @@ form input[type='submit']{
     border-radius: 10px;
     margin: auto;
     cursor: pointer;
+}*/
+
+.divEnviar{
+    text-align: end;
+    margin-bottom: 20px;
+    
 }

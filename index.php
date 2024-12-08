@@ -19,7 +19,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sirius do Norte</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     
@@ -27,17 +29,26 @@
 
 
 <main>
+    
 <?php 
     if($logindeUnidade){
         echo("<h2>Unidade ".$_SESSION['unidade_nome']."</h2>");
     }else{
+        echo('
+        <div class="btn-group botoes-top">
+            <a href="#" class="btn btn-primary fs-6">Inserir desafio</a>
+            <a href="#" class="btn btn-primary fs-6">Cadastrar unidade</a>
+            <a href="./concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
+        </div>
+    ');
         echo("<h2>Desafios enviados</h2>");
-        echo("<a href='./concluidos.php' class='concluidos'>Concluídos</a>");
+
     }
 
+    
 ?>
     
-    <table>
+    <table class="table table-striped">
         <thead>
             <tr>
                 <?php 

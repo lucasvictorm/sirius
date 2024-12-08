@@ -14,6 +14,8 @@ if(isset($_FILES['foto'])){
     }
     //var_dump($imagem);
 
+
+
     $nomeFoto = $imagem['name'];
     $novoNomeFoto = uniqid();
     $formato = strtolower(pathinfo($imagem['name'], PATHINFO_EXTENSION));
@@ -21,6 +23,7 @@ if(isset($_FILES['foto'])){
     if($formato != 'jpg' && $formato != 'png'){
         die('Formato de arquivo inválido');
     }
+
 
     $nome_unidade = mysqli_fetch_assoc(mysqli_query($conexao, "select nome from unidades where id = $id_unidade"));
     $pasta = "./imagens/".strtolower($nome_unidade['nome']."/");

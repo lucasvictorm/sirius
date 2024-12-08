@@ -3,7 +3,10 @@
     $user = "root";
     $pass = "";
     $banco = "sirius";
-    $conexao = mysqli_connect($host, $user, $pass, $banco) or die(mysqli_error($conexao));
+    $conexao = mysqli_connect($host, $user, $pass, $banco);
+    if (!$conexao) {
+        die("Connection failed: " . mysqli_connect_error());
+    }
     if(!$conexao){
         die(mysqli_connect_error());
     }

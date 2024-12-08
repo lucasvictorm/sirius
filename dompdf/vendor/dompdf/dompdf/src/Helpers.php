@@ -912,6 +912,7 @@ class Helpers
                 if (isset($maxlen)) {
                     $result = file_get_contents($uri, false, $context, $offset, $maxlen);
                 } else {
+                    var_dump($uri);
                     $result = file_get_contents($uri, false, $context, $offset);
                 }
                 if ($result !== false) {

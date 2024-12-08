@@ -10,6 +10,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Desafio</title>
+    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    
+    <!-- include summernote css/js -->
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
+    <script src="./src/summernote-pt-BR.js"></script>
+
+    
+    
     <link rel="stylesheet" href="desafio.css">
 </head>
 <body>
@@ -18,22 +31,43 @@
         <h1><?=$sql['nome']?></h1>
         <form action="concluir.php" enctype="multipart/form-data" method="post" >
             <input type="hidden" name="desafio_id" value=<?=$desafio_id?>>
-            <div>
-                <label for="foto">Enviar foto</label>
-                
-                <input type="file" name="foto" id="foto">
+            <div class="mb-3">
+                <label for="foto" class="form-label">Enviar foto</label>
+                <input class="form-control" type="file" name="foto" id="foto">
             </div>
             
-            <div>
+            
+            
                 <label for="relatorio">Relatório</label>
-                <textarea name="relatorio" id="relatorio" cols="60" rows="15"></textarea>
+                <textarea name="relatorio" id="summernote"></textarea>
             </div>
         
-
-            <input type="submit" value="Enviar">
+            <div class="divEnviar">
+                <button type="submit" class="btn btn-success btn-lg fs-4 w-25">Enviar</button>
+            </div>
+            
 
         </form>
 
     </main>
+    <script>
+        $(document).ready(function() {
+  $('#summernote').summernote({
+    lang: 'pt-BR',
+    toolbar: [
+    // [groupName, [list of button]]
+    ['style', ['bold', 'italic', 'underline', 'clear']],
+    ['font', ['strikethrough', 'superscript', 'subscript', 'fontname']],
+    ['fontsize', ['fontsize']],
+    ['color', ['color']],
+    ['para', ['ul', 'ol', 'paragraph']],
+    ['height', ['height']],
+    
+  ],
+  height: '300px',
+  });
+});
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>
 </html>

@@ -12,7 +12,6 @@ require_once 'dompdf/autoload.inc.php';
 $unidadeId = $_SESSION['unidade_id']; 
 
 
-
 $sql_dados = mysqli_query($conexao, "SELECT e.path_img, e.relatorio, u.nome as 'nome_unidade', desafios.nome as 'nome_desafio' FROM `enviados` e 
 join unidades u on u.id = e.id_unidade
 join desafios on desafios.id = e.id_desafio
@@ -33,9 +32,12 @@ $html = "<style>
 
 while ($dados = mysqli_fetch_assoc($sql_dados)){
     var_dump($dados);
-    $html .= "<div style='page-break-after: always; text-align: center'>
-    <h2>".$dados['nome_desafio']."</h2>
-    <img src='".$dados['path_img']."' alt='' style='width: 300px;'>
+    $html .= "<div style='page-break-after: always;'>
+    <h2 style='text-align: center;'>".$dados['nome_desafio']."</h2>
+    <div style='text-align: center;'>
+        <img src='".$dados['path_img']."' alt='' style='width: 300px; '>
+    </div>
+    
     <p>".$dados['relatorio']."</p>
 </div>";
 }
