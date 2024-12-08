@@ -36,7 +36,7 @@
     }else{
         echo('
         <div class="btn-group botoes-top">
-            <a href="#" class="btn btn-primary fs-6">Inserir desafio</a>
+            <a href="./inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
             <a href="#" class="btn btn-primary fs-6">Cadastrar unidade</a>
             <a href="./concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
         </div>
