@@ -1,6 +1,6 @@
 <?php 
 
-include './conexao.php';
+include "../database/conexao.php";
 
 $nome = $_POST['nomeDesafio'];
 $pontos = $_POST['pontos'];
@@ -12,5 +12,5 @@ $desafio_id = mysqli_insert_id($conexao);
 mysqli_query($conexao, "insert into desafios_unidades (id_desafio, id_unidade, status) select $desafio_id, id, 'pendente' from unidades");
 
 
-echo("<script>window.location = './index.php'</script>");
+echo("<script>window.location = '../index.php'</script>");
 ?>

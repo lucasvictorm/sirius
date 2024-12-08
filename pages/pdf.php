@@ -1,6 +1,6 @@
 <?php 
-include './conexao.php';
-require_once 'dompdf/autoload.inc.php';
+include '../database/conexao.php';
+require_once '../dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
     $options = new Options();

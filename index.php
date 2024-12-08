@@ -1,9 +1,9 @@
 <?php 
-    include "./conexao.php";
+    include "./database/conexao.php";
     session_start();
     if(!isset($_SESSION["unidade_id"]) && !isset($_SESSION["adm_login"])){
         //echo($_SESSION["unidade_id"]);
-        echo("<script>window.location='login.php'</script>");
+        echo("<script>window.location='./pages/login.php'</script>");
     }
     if(isset($_SESSION["unidade_id"])){
         $unidadeId = $_SESSION['unidade_id'];
@@ -13,19 +13,14 @@
     }
     
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include './includes/head.php'?>
     <title>Sirius do Norte</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="./assets/css/style.css">
     
 </head>
 <body>
     
-    <?php include "./header.php"?>
+    <?php include "./includes/header.php"?>
 
 
 <main>
@@ -36,18 +31,32 @@
     }else{
         echo('
         <div class="btn-group botoes-top">
-            <a href="./inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
-            <a href="./cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
-            <a href="./concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
+            <a href="./pages/inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
+            <a href="./pages/cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
+            <a href="./pages/concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
         </div>
     ');
         echo("<h2>Desafios enviados</h2>");
 
     }
-
-    
 ?>
-    
+    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Menu</button>
+
+    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
+    <div class="offcanvas-header">
+        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+    <div class="botoes-top">
+            <a href="./pages/inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
+            <a href="./pages/cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
+            <a href="./pages/concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
+            <a href="#" class="btn btn-success fs-6">Gerenciar desafios</a>
+            <a href="#" class="btn btn-success fs-6">Gerenciar Unidades</a>
+        </div>
+    </div>
+    </div>
     <table class="table table-striped">
         <thead>
             <tr>
@@ -96,7 +105,7 @@
                     echo("<tr>
                 <td>".$desafios['nome']."</td>
                 <td>".$desafios['pontos']."</td>
-                <td><a href='./desafio.php?id=".$desafios['id']."'>Responder</a></td>
+                <td><a href='./pages/desafio.php?id=".$desafios['id']."'>Responder</a></td>
                 <td>".$desafios['status']."</td>
                 </tr>");
                 }
@@ -106,7 +115,7 @@
                 <td>".$desafios['nome_desafio']."</td>
                 <td>".$desafios['nome_unidade']."</td>
                 <td>".$desafios['data_upload']."</td>
-                <td><a href='./verEnvio.php?uid=".$desafios['id_unidade']."&did=".$desafios['id_desafio']."'>Analisar</a></td>");
+                <td><a href='./pages/verEnvio.php?uid=".$desafios['id_unidade']."&did=".$desafios['id_desafio']."'>Analisar</a></td>");
                 }
                 
             }
@@ -117,12 +126,12 @@
     </table>
     <?php 
     if(isset($_SESSION['unidade_nome'])){
-        echo('<a class="pdf" href="pdf.php">Gerar PDF</a>');
+        echo('<a class="pdf" href="./pages/pdf.php">Gerar PDF</a>');
     }
     
     ?>
 </main>
 
-
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.min.js" integrity="sha384-0pUGZvbkm6XF6gxjEnlmuGrJXVbNuzT9qBBavbLwCsOGabYfZo0T0to5eqruptLy" crossorigin="anonymous"></script>
 </body>
 </html>

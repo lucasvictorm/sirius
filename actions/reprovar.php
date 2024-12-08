@@ -1,5 +1,5 @@
 <?php 
-include "./conexao.php";
+ include "../database/conexao.php";
 
     $unidadeId = $_POST['uid'];
     $desafioId = $_POST['did'];
@@ -10,5 +10,5 @@ include "./conexao.php";
     
     mysqli_query($conexao, "DELETE FROM enviados WHERE enviados.id_desafio = $desafioId and enviados.id_unidade = $unidadeId");
 
-    echo("<script>window.location = './index.php'</script>");
+    echo("<script>window.location = '../index.php'</script>");
 ?>

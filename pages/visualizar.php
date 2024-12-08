@@ -1,14 +1,10 @@
 <?php 
-    include "./conexao.php";
+    include "../database/conexao.php";
 
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include '../includes/head.php'?>
     <title>Envio</title>
-    <link rel="stylesheet" href="verEnvio.css">
+    <link rel="stylesheet" href="../assets/css/verEnvio.css">
 </head>
 <?php 
     $unidadeId = $_GET['uid'];
@@ -23,7 +19,7 @@
 ?>
 <body>
 
-    <?php include "./header.php"?>
+    <?php include "../includes/header.php"?>
 
     <main>
         <div class="info_envio">

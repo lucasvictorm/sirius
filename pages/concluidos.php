@@ -1,5 +1,5 @@
 <?php 
-    include "./conexao.php";
+    include "../database/conexao.php";
     session_start();
     if(!isset($_SESSION["unidade_id"]) && !isset($_SESSION["adm_login"])){
         //echo($_SESSION["unidade_id"]);
@@ -13,24 +13,19 @@
     }
     
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include '../includes/head.php'?>
     <title>Sirius do Norte</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
-    <link rel="stylesheet" href="style.css">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
 </head>
 <body>
     
-    <?php include "./header.php"?>
+    <?php include "../includes/header.php"?>
 
 
 <main>
     <h2>Desafios concluídos</h2>
         
-
     
     <table class="table">
         <thead>

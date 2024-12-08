@@ -1,17 +1,15 @@
-<?php include "./conexao.php";
+<?php include "../database/conexao.php";
     $desafio_id = $_GET["id"];
     $sql = mysqli_fetch_assoc(mysqli_query($conexao,
     "SELECT nome from desafios where id = $desafio_id"));
 
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php 
+include '../includes/head.php'
+?>
     <title>Desafio</title>
     
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    
     <link href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
@@ -21,15 +19,14 @@
     <script src="https://cdn.jsdelivr.net/npm/summernote@0.9.0/dist/summernote.min.js"></script>
     <script src="./src/summernote-pt-BR.js"></script>
 
-    
-    
-    <link rel="stylesheet" href="desafio.css">
+    <link rel="stylesheet" href="../assets/css/desafio.css">
+
 </head>
 <body>
-    <?php include "./header.php"?>
+    <?php include "../includes/header.php"?>
     <main>
         <h1><?=$sql['nome']?></h1>
-        <form action="concluir.php" enctype="multipart/form-data" method="post" >
+        <form action="../actions/concluir.php" enctype="multipart/form-data" method="post" >
             <input type="hidden" name="desafio_id" value=<?=$desafio_id?>>
             <div class="mb-3">
                 <label for="foto" class="form-label">Enviar foto</label>

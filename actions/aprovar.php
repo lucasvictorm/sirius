@@ -1,5 +1,5 @@
 <?php 
-include "./conexao.php";
+include "../database/conexao.php";
 
     $unidadeId = $_POST['uid'];
     $desafioId = $_POST['did'];
@@ -12,5 +12,5 @@ include "./conexao.php";
     
     mysqli_query($conexao, "UPDATE unidades set pontos = $soma where id = $unidadeId");
 
-    echo("<script>window.location = './index.php'</script>");
+    echo("<script>window.location = '../index.php'</script>");
 ?>

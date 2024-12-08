@@ -1,15 +1,10 @@
-<?php include "./conexao.php"?>
-
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<?php include "../database/conexao.php"?>
+<?php include '../includes/head.php'?>
     <title>Ranking</title>
-    <link rel="stylesheet" href="ranking.css">
+    <link rel="stylesheet" href="../assets/css/ranking.css">
 </head>
 <body>
-    <?php include "./header.php"?>
+    <?php include "../includes/header.php"?>
     
     <main>
     <h1>Ranking</h1>

@@ -1,5 +1,5 @@
 <?php 
-    include "./conexao.php";
+    include "../database/conexao.php";
 
     $login = $_POST["login"];
     $senha = $_POST["senha"];
@@ -15,9 +15,9 @@
             $_SESSION['adm_login'] = $did['login'];
             $_SESSION['adm_nome'] = $did['nome'];
             
-            echo("<script>window.location='index.php'</script>");
+            echo("<script>window.location='../index.php'</script>");
         }else{
-            echo("<script>window.location='./login.php?status=".'erro'."'</script>");
+            echo("<script>window.location='../pages/login.php?status=".'erro'."'</script>");
         }
 
     }else{
@@ -30,9 +30,9 @@
         $_SESSION['unidade_id'] = $did['id'];
         $_SESSION['unidade_nome'] = $did['nome'];
         
-        echo("<script>window.location='index.php'</script>");
+        echo("<script>window.location='../index.php'</script>");
     }else{
-        echo("<script>window.location='./login.php?status=".'erro'."'</script>");
+        echo("<script>window.location='../pages/login.php?status=".'erro'."'</script>");
     }
 
    

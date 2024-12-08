@@ -1,15 +1,11 @@
 <?php 
-    include "./conexao.php";
+    include "../database/conexao.php";
 
 ?>
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <?php include '../includes/head.php'?>
     <title>Envio</title>
-    <link rel="stylesheet" href="verEnvio.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link rel="stylesheet" href="../assets/css/verEnvio.css">
+    
 </head>
 <?php 
     $unidadeId = $_GET['uid'];
@@ -24,7 +20,7 @@
 ?>
 <body>
 
-    <?php include "./header.php"?>
+    <?php include "../includes/header.php"?>
 
     <main>
         <div class="info_envio">
@@ -44,14 +40,14 @@
         <div class="actions">
 
         
-            <form action="aprovar.php" method="post">
+            <form action="../actions/aprovar.php" method="post">
                 <input type="hidden" name="uid" value="<?=$unidadeId?>">
                 <input type="hidden" name="did" value="<?=$desafioId?>">
                 <input type="hidden" name="pontos" value="<?=$dados['pontos']?>">
                 <input type="hidden" name="pontosUnidade" value="<?=$dados['pontos_unidade']?>">
                 <button type="submit" class="btn btn-success">Aprovar</button>
             </form>
-            <form action="reprovar.php" method="post">
+            <form action="../actions/reprovar.php" method="post">
                 <input type="hidden" name="uid" value="<?=$unidadeId?>">
                 <input type="hidden" name="did" value="<?=$desafioId?>">
                 
