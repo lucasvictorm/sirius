@@ -36,24 +36,19 @@
     }
 
 ?>
-    <?php /*if($_SESSION['unidade_nome']){
-        //echo();
-    }
-    */
-    
-    ?>
     
     <table>
         <thead>
             <tr>
                 <?php 
                 if($logindeUnidade){
-                    echo("<th scope='col' colspan='1'>Desafio</th><th scope='col' colspan='1'>Pontos</th><th scope='col' colspan='1'>Ação</th>");
+                    echo("<th scope='col' colspan='1'>Desafio</th><th scope='col' colspan='1'>Pontos</th><th scope='col' colspan='1'>Ação</th> <th scope='col' colspan='1'>Status</th>");
                 }else{
                     echo("<th scope='col'>Desafio</th>
                     <th scope='col'>Unidade</th>
                     <th scope='col'>Data</th>
-                    <th scope='col'>Analisar</th>");
+                    <th scope='col'>Analisar</th>
+                    ");
                 }
 
 
@@ -81,13 +76,17 @@
                 if(isset($_SESSION['unidade_nome'])){
                 if($desafios['status'] == 'enviado' || $desafios['status'] == 'concluido'){
                     echo("<tr class='concluido'>
-                <td>".$desafios['nome']."</td><td>".$desafios['pontos']."</td></tr>");
+                <td>".$desafios['nome']."</td><td>".$desafios['pontos']."</td>
+                <td></td>
+                <td>".$desafios['status']."</td>
+                </tr>");
 
                 }else{
                     echo("<tr>
                 <td>".$desafios['nome']."</td>
                 <td>".$desafios['pontos']."</td>
                 <td><a href='./desafio.php?id=".$desafios['id']."'>Responder</a></td>
+                <td>".$desafios['status']."</td>
                 </tr>");
                 }
                 }else{
@@ -98,13 +97,19 @@
                 <td>".$desafios['data_upload']."</td>
                 <td><a href='./verEnvio.php?uid=".$desafios['id_unidade']."&did=".$desafios['id_desafio']."'>Analisar</a></td>");
                 }
-                ;
+                
             }
         
         ?>
         </tbody>
         
     </table>
+    <?php 
+    if(isset($_SESSION['unidade_nome'])){
+        echo('<a class="pdf" href="pdf.php">Gerar PDF</a>');
+    }
+    
+    ?>
 </main>
 
 

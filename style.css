@@ -91,3 +91,12 @@ table td a{
     color: #441e97;
     text-decoration: none;
 }
+
+.pdf{
+    background-color: #001055;
+    color: white;
+    text-decoration: none;
+    padding: .6em;
+    border-radius: 10px;
+
+}
