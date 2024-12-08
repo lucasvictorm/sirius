@@ -29,34 +29,12 @@
     if($logindeUnidade){
         echo("<h2>Unidade ".$_SESSION['unidade_nome']."</h2>");
     }else{
-        echo('
-        <div class="btn-group botoes-top">
-            <a href="./pages/inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
-            <a href="./pages/cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
-            <a href="./pages/concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
-        </div>
-    ');
+        include './includes/menu.php';
         echo("<h2>Desafios enviados</h2>");
 
     }
 ?>
-    <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasWithBothOptions" aria-controls="offcanvasWithBothOptions">Menu</button>
-
-    <div class="offcanvas offcanvas-start" data-bs-scroll="true" tabindex="-1" id="offcanvasWithBothOptions" aria-labelledby="offcanvasWithBothOptionsLabel">
-    <div class="offcanvas-header">
-        <h5 class="offcanvas-title" id="offcanvasWithBothOptionsLabel">Menu</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-    <div class="botoes-top">
-            <a href="./pages/inserirDesafio.php" class="btn btn-primary fs-6">Inserir desafio</a>
-            <a href="./pages/cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
-            <a href="./pages/concluidos.php" class="btn btn-success fs-6">Ver concluídos</a>
-            <a href="#" class="btn btn-success fs-6">Gerenciar desafios</a>
-            <a href="#" class="btn btn-success fs-6">Gerenciar Unidades</a>
-        </div>
-    </div>
-    </div>
+    
     <table class="table table-striped">
         <thead>
             <tr>
