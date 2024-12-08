@@ -15,15 +15,15 @@ include './header.php'
 ?>
     <main>
         <h2>Inserir desafio</h2>    
-        <form action="insereDesafio.php">
+        <form action="insereDesafio.php" method="post">
 
             <div class="mb-3">
                 <label for="nomeDesafio" class="form-label">Nome do desafio</label>
-                <input type="text" class="form-control" value="nomeDesafio" id="nomeDesafio" placeholder="Escreva aqui...">
+                <input type="text" class="form-control" name="nomeDesafio" id="nomeDesafio" placeholder="Escreva aqui...">
             </div>
             <div class="mb-3">
                 <label for="pontos" class="form-label">Pontuação</label>
-                <input type="number" class="form-control" value="pontos" id="pontos">
+                <input type="number" class="form-control" name="pontos" id="pontos">
             </div>
 
             <button type="submit" class="btn btn-success">Inserir Desafio</button>
