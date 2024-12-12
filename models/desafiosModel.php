@@ -7,9 +7,6 @@ class DesafiosModel{
         $this->db = $db;
     }
 
-    public function unidadesComDesafioConcluido(){
-        
-    }
 
     public function apagarDesafio($id){
         $unidade = new UnidadeModel($this->db);

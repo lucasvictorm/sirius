@@ -4,9 +4,12 @@ require_once '../dompdf/autoload.inc.php';
     use Dompdf\Dompdf;
     use Dompdf\Options;
     $options = new Options();
+    $options->set('isRemoteEnabled', true);
     $options->set('chroot', realpath(''));
     $dompdf = new Dompdf($options);
     
+
+    session_start();
     
     session_start();
 $unidadeId = $_SESSION['unidade_id']; 
@@ -31,11 +34,11 @@ $html = "<style>
 
 
 while ($dados = mysqli_fetch_assoc($sql_dados)){
-    var_dump($dados);
+    
     $html .= "<div style='page-break-after: always;'>
     <h2 style='text-align: center;'>".$dados['nome_desafio']."</h2>
     <div style='text-align: center;'>
-        <img src='".$dados['path_img']."' alt='' style='width: 300px; '>
+        <img src='http://localhost:8080/sirius/".$dados['path_img']."' alt='' style='width: 300px; '>
     </div>
     
     <p>".$dados['relatorio']."</p>
