@@ -22,6 +22,12 @@ class UnidadeModel{
 
     }
 
+    public function excluirUnidade($id){
+        mysqli_query($this->db, "delete from unidades where id = $id");
+
+
+
+    }
     
 
 }

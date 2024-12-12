@@ -15,7 +15,7 @@
             <a href="./pages/cadastrarUnidade.php" class="btn btn-primary fs-6">Cadastrar unidade</a>
             <a href="./pages/concluidos.php" class="btn btn-primary fs-6">Ver concluídos</a>
             <a href="./pages/gerenciarDesafios.php" class="btn btn-primary fs-6">Gerenciar desafios</a>
-            <a href="#" class="btn btn-primary fs-6">Gerenciar unidades</a>
+            <a href="./pages/gerenciarUnidades.php" class="btn btn-primary fs-6">Gerenciar unidades</a>
         </div>
     </div>
     </div>
